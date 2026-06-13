@@ -16,7 +16,7 @@ pipeline {
 
             steps {
                 sh '''
-                cd terraform
+            
                 terraform init
                 '''
             }
@@ -26,7 +26,7 @@ pipeline {
 
             steps {
                 sh '''
-                cd terraform
+                
                 terraform validate
                 '''
             }
@@ -36,7 +36,7 @@ pipeline {
 
             steps {
                 sh '''
-                cd terraform
+                
                 terraform plan -out=tfplan
                 '''
             }
@@ -46,7 +46,7 @@ pipeline {
 
             steps {
                 sh '''
-                cd terraform
+                
                 terraform apply -auto-approve tfplan
                 '''
             }
